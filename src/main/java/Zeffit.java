@@ -9,6 +9,8 @@
  */
 public class Zeffit
 {
+    boolean isAlive = true;
+    int hitsTaken = 0;
     // TODO: add final variables
 
     // TODO: add instance variable(s)
@@ -18,6 +20,8 @@ public class Zeffit
      */
     public Zeffit()
     {
+        isAlive = true;
+        hitsTaken = 0;
         // TODO: initialize instance variable(s)
     }
 
@@ -27,6 +31,11 @@ public class Zeffit
      */
     public void takesHit()
     {
+        hitsTaken++;
+        isGreen();
+        isBlue();
+        isRed();
+        isDead();
         // TODO: replace this line with your code
     }
 
@@ -37,6 +46,10 @@ public class Zeffit
      */
     public boolean isHitFree()
     {
+        if (hitsTaken == 0){
+            return true;
+        }
+        return false;
         // TODO: replace this line with your code
     }
 
@@ -47,6 +60,10 @@ public class Zeffit
      */
     public boolean isGreen()
     {
+        if (hitsTaken == 1){
+            return true;
+        }
+        return false;
         // TODO: replace this line with your code
     }
 
@@ -57,6 +74,10 @@ public class Zeffit
      */
     public boolean isBlue()
     {
+        if (hitsTaken == 2){
+            return true;
+        }
+        return false;
         // TODO: replace this line with your code
     }
 
@@ -67,6 +88,10 @@ public class Zeffit
      */
     public boolean isRed()
     {
+        if (hitsTaken == 3){
+            return true;
+        }
+        return false;
         // TODO: replace this line with your code
     }
 
@@ -77,6 +102,10 @@ public class Zeffit
      */
     public boolean isDead()
     {
+        if (hitsTaken > 3){
+            isAlive = !isAlive;
+        }
+        return isAlive;
         // TODO: replace this line with your code
     }
 }
